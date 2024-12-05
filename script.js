@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const base64Value = base64Input.value.trim();
 
         if (base64Value === "") {
-          outputBox.textContent = "Please enter a Base64 string.";
+          outputBox.textContent = "Proszę wklej wiadomość powyżej";
         } else {
           // Decode Base64 safely using TextDecoder
           const byteArray = new Uint8Array(
@@ -43,8 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 5000);
       } catch (error) {
         // Handle errors for invalid Base64
-        outputBox.textContent =
-          "Invalid Base64 input. Please check your string.";
+        outputBox.textContent = "Proszę wklej wiadomość powyżej";
         outputBox.classList.remove("hidden");
         convertButton.textContent = "Convert"; // Reset button text
         convertButton.style.position = "static"; // Fix the button in place
