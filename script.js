@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const base64Input = document.getElementById("base64Input");
   const convertButton = document.getElementById("convertButton");
   const outputBox = document.getElementById("output");
-  const gifs = document.querySelectorAll(".bounds");
+  const gifs = document.querySelectorAll(".bouncing-gif");
   let clickCounter = 0; // Track the number of clicks
 
   convertButton.addEventListener("click", function () {
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
           gifs.forEach((gif) => {
             gif.classList.remove("hidden");
           });
-        }, 5000);
+        }, 16000);
       } catch (error) {
         // Handle errors for invalid Base64
         outputBox.textContent = "Proszę wklej wiadomość powyżej";
