@@ -2,8 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const base64Input = document.getElementById("base64Input");
   const convertButton = document.getElementById("convertButton");
   const outputBox = document.getElementById("output");
-  const gif = document.getElementById("gif");
-
+  const gifs = document.querySelectorAll(".bounds");
   let clickCounter = 0; // Track the number of clicks
 
   convertButton.addEventListener("click", function () {
@@ -35,8 +34,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Make the output visible
         outputBox.classList.remove("hidden");
-        convertButton.textContent = "Convert"; // Reset button text
+        convertButton.textContent = "rozkoduj"; // Reset button text
         convertButton.style.position = "static"; // Fix the button in place
+        setTimeout(() => {
+          gifs.forEach((gif) => {
+            gif.classList.remove("hidden");
+          });
+        }, 5000);
       } catch (error) {
         // Handle errors for invalid Base64
         outputBox.textContent =

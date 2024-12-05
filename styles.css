@@ -10,6 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
   color: #fff;
 }
@@ -79,4 +80,52 @@ button {
 
 button:hover {
   background: #0078d7;
+}
+.bounds {
+  position: relative; /* Ensures children are positioned relative to this container */
+  margin: 0 0 20px 20px;
+  border: 5px;
+  width: 90vw;
+  height: 20vh;
+  overflow: hidden; /* Prevents the GIF from going outside the container */
+}
+
+/* Keyframes for horizontal movement */
+@keyframes hor-movement {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(
+      100% - 100px
+    ); /* Full width of the container minus the GIF's width */
+  }
+}
+
+/* Keyframes for vertical movement */
+@keyframes ver-movement {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: calc(
+      100% - 100px
+    ); /* Full height of the container minus the GIF's height */
+  }
+}
+
+.bouncing-gif {
+  position: absolute;
+  height: 100px; /* Set to your desired size */
+  width: 100px; /* Set to your desired size */
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1; /* Places the GIF below the content box */
+  pointer-events: none; /* Prevent interaction with the GIF */
+
+  animation-name: hor-movement, ver-movement;
+  animation-duration: 3.141s, 1.414s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
 }
