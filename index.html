@@ -8,15 +8,19 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
+    <canvas id="canvas"></canvas>
+    
+    <div class="container" id="content">
       <h1 style="margin: 0.5rem 0 1.5rem 0">bez tytułu</h1>
+
       <textarea
-        id="base64Input"
-        placeholder="Wklej zakodowaną wiadomośc tutaj..."
+      id="base64Input"
+      placeholder="Wklej zakodowaną wiadomośc tutaj..."
       ></textarea>
       <button id="convertButton">rozkoduj</button>
       <div id="output" class="output-box hidden"></div>
     </div>
+    <script src="video.js"></script>
     <script src="script.js"></script>
     <script src="random.js"></script>
   </body>
