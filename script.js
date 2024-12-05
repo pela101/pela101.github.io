@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
               .map((char) => char.charCodeAt(0))
           );
           const decodedText = new TextDecoder("utf-8").decode(byteArray);
-          outputBox.textContent = decodedText;
+          revealText(decodedText, outputBox, 50);
         }
 
         // Make the output visible
@@ -62,5 +62,22 @@ document.addEventListener("DOMContentLoaded", function () {
     convertButton.style.position = "absolute";
     convertButton.style.left = `${randomX}vw`;
     convertButton.style.top = `${randomY}vh`;
+  }
+  function revealText(text, container, delay) {
+    let index = 0;
+
+    function typeCharacter() {
+      if (index < text.length) {
+        container.textContent += text[index];
+        index++;
+        if (text[index - 1] == ":") {
+          setTimeout(typeCharacter, 750);
+        } else {
+          setTimeout(typeCharacter, delay);
+        }
+      }
+    }
+
+    typeCharacter();
   }
 });
