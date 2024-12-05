@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Make the output visible
         outputBox.classList.remove("hidden");
+        convertButton.classList.add("hidden");
         convertButton.textContent = "rozkoduj"; // Reset button text
         convertButton.style.position = "static"; // Fix the button in place
         setTimeout(() => {
